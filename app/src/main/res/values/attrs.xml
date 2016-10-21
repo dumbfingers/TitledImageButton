@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitledImageButton">
+        <attr name="tib_title" format="string" />
+        <attr name="tib_titleStyle" format="reference" />
+        <attr name="tib_titleColor" format="color" />
+        <attr name="tib_icon" format="reference" />
+        <attr name="tib_backgroundColor" format="color" />
+        <attr name="tib_tint" format="color" />
+        <attr name="tib_enabled" format="boolean" />
+    </declare-styleable>
+</resources>
