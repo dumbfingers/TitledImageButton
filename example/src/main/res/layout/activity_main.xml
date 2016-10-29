@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center_horizontal"
+    tools:context="com.yeyaxi.android.titleimagebutton.example.MainActivity">
+
+    <com.yeyaxi.android.titledimagebutton.TitledImageButton
+        android:id="@+id/button_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        app:tib_icon="@drawable/ic_launcher"
+        app:tib_orientation="vertical"
+        app:tib_title="Image Button"
+        app:tib_titleColor="@color/colorPrimary" />
+
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <com.yeyaxi.android.titledimagebutton.TitledImageButton
+        android:id="@+id/button_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        app:tib_backgroundColor="@color/colorPrimary"
+        app:tib_icon="@drawable/ic_launcher"
+        app:tib_orientation="horizontal"
+        app:tib_tint="@color/colorAccent"
+        app:tib_title="Image Button"
+        app:tib_titleStyle="@style/horizontalButtonTextStyle" />
+
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+</LinearLayout>
