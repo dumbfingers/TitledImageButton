@@ -42,21 +42,18 @@ public class TitledImageButton extends LinearLayout {
     private ColorStateList tint;
     private ColorStateList backgroundColor;
     private boolean enabled;
-
+    private int orientation;
 
     public TitledImageButton(Context context) {
-        super(context);
-        commonInit(context, null);
+        this(context, null);
     }
 
     public TitledImageButton(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        commonInit(context, attrs);
+        this(context, attrs, 0);
     }
 
     public TitledImageButton(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        commonInit(context, attrs);
+        this(context, attrs, defStyleAttr, 0);
     }
 
     @TargetApi(21)
@@ -76,11 +73,14 @@ public class TitledImageButton extends LinearLayout {
             tint = ta.getColorStateList(R.styleable.TitledImageButton_tib_tint);
             backgroundColor = ta.getColorStateList(R.styleable.TitledImageButton_tib_backgroundColor);
             enabled = ta.getBoolean(R.styleable.TitledImageButton_tib_enabled, true);
+            orientation = ta.getInt(R.styleable.TitledImageButton_tib_orientation, 0);
+
         } finally {
             ta.recycle();
         }
 
-        View.inflate(context, R.layout.layout_titled_image_button, this);
+        setLayout(context);
+
         ButterKnife.bind(this);
 
         setEnabled(enabled);
@@ -99,6 +99,22 @@ public class TitledImageButton extends LinearLayout {
         setBackgroundColor(backgroundColor);
 
         containerView.setOnTouchListener(getOnTouchListener());
+    }
+
+    private void setLayout(Context context) {
+        int layoutRes;
+        switch (orientation) {
+            case HORIZONTAL:
+                layoutRes = R.layout.layout_titled_image_button_horizontal;
+                break;
+            case VERTICAL:
+                layoutRes = R.layout.layout_titled_image_button_vertical;
+                break;
+            default:
+                layoutRes = R.layout.layout_titled_image_button_horizontal;
+                break;
+        }
+        View.inflate(context, layoutRes, this);
     }
 
     public void setTitleView(@StringRes int resId) {

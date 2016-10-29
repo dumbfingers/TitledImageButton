@@ -8,5 +8,10 @@
         <attr name="tib_backgroundColor" format="color" />
         <attr name="tib_tint" format="color" />
         <attr name="tib_enabled" format="boolean" />
+        <attr name="tib_orientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+
     </declare-styleable>
 </resources>
