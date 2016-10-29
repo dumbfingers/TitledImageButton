@@ -8,7 +8,6 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -141,13 +140,13 @@ public class TitledImageButton extends LinearLayout {
 
     public void setIconTint(ColorStateList colorStateList) {
         if (colorStateList != null) {
-            iconView.setColorFilter(colorStateList.getColorForState(getDrawableState(), ContextCompat.getColor(getContext(), 0)));
+            iconView.setColorFilter(colorStateList.getColorForState(getDrawableState(), colorStateList.getDefaultColor()));
         }
     }
 
     public void setBackgroundColor(ColorStateList colorStateList) {
         if (colorStateList != null) {
-            containerView.setBackgroundColor(colorStateList.getColorForState(getDrawableState(), ContextCompat.getColor(getContext(), 0)));
+            containerView.setBackgroundColor(colorStateList.getColorForState(getDrawableState(), colorStateList.getDefaultColor()));
         }
     }
 
